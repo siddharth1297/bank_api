@@ -10,7 +10,7 @@ class ListBankDetailsView(generics.ListAPIView):
     GET bank/
     """
     serializer_class = BankBranchSerializer
-    #permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated,)
 
     def get_queryset(self):
         return BankBranch.objects.all()
