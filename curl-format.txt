@@ -1,0 +1,80 @@
+1. Obtain JWT key
+
+Request:
+
+curl -X POST \
+  https://sidd-bank-api.herokuapp.com/api-token-auth/ \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"username": "",
+	"password": ""
+}'
+
+Response:
+
+{
+    "token": ""
+}
+
+
+2. Get all the bank details 
+
+Request:
+
+curl -X GET \
+  'https://sidd-bank-api.herokuapp.com/api/bank/?limit=<limit>&offset=<offset>' \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+
+Response:
+
+{
+    "count": ,
+    "next": "",
+    "previous": ,
+    "results": [
+        {
+            "ifsc": "",
+            "bank_name": "",
+            "branch": "",
+            "address": "",
+            "city": "",
+            "district": "",
+            "state": ""
+        }
+    ]
+}
+
+
+3. Get bank details with given ifsc
+
+Request:
+
+curl -X GET \
+  https://sidd-bank-api.herokuapp.com/api/bank/<ifsc>/ \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+
+Response:
+
+{
+    "ifsc": "",
+    "bank_name": "",
+    "branch": "",
+    "address": "",
+    "city": "",
+    "district": "",
+    "state": ""
+}
+
+
+4. Get bank details with given name and city
+
+Request:
+
+curl -X GET \
+  'https://sidd-bank-api.herokuapp.com/api/bank/<bankName>/<city>/?limit=<limit>&offset=<offset>' \
+  -H 'Authorization: Bearer <token>' \
+  -H 'Content-Type: application/json' \
+
+Response: Similar to Get all bank details (2)
