@@ -4,7 +4,6 @@ Request:
 
 curl -X POST \
   https://sidd-bank-api.herokuapp.com/api-token-auth/ \
-  -H 'Content-Type: application/json' \
   -d '{
 	"username": "",
 	"password": ""
@@ -24,7 +23,6 @@ Request:
 curl -X GET \
   'https://sidd-bank-api.herokuapp.com/api/bank/?limit=<limit>&offset=<offset>' \
   -H 'Authorization: Bearer <token>' \
-  -H 'Content-Type: application/json' \
 
 Response:
 
@@ -53,7 +51,6 @@ Request:
 curl -X GET \
   https://sidd-bank-api.herokuapp.com/api/bank/<ifsc>/ \
   -H 'Authorization: Bearer <token>' \
-  -H 'Content-Type: application/json' \
 
 Response:
 
@@ -73,8 +70,7 @@ Response:
 Request:
 
 curl -X GET \
-  'https://sidd-bank-api.herokuapp.com/api/bank/<bankName>/<city>/?limit=<limit>&offset=<offset>' \
+  'https://sidd-bank-api.herokuapp.com/api/search/<bankName>-<city>/?limit=<limit>&offset=<offset>' \
   -H 'Authorization: Bearer <token>' \
-  -H 'Content-Type: application/json' \
 
 Response: Similar to Get all bank details (2)
