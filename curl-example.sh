@@ -1,3 +1,7 @@
+export jwt="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNTY1NTM2OTk1LCJlbWFpbCI6ImFkbWluQGJhbmsuY29tIn0.HUyWPBGxfXEn_HV6igBJS_ac4xL7X6zTb-jZitz6qB0"
+
+
+
 # Get all the bank details 
 
 echo "------ All the banks details limit=5 and offset=8 ------"
