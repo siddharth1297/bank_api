@@ -19,7 +19,7 @@ class ListBankDetailsView(generics.ListAPIView):
 class BankDetailsIfcsView(generics.RetrieveAPIView):
     """
     Bank details, for given ifsc
-    GET bank/<ifsc>
+    GET bank/<ifsc>/
     """
     serializer_class = BankBranchSerializer
     permission_classes = (permissions.IsAuthenticated,)
@@ -31,7 +31,7 @@ class BankDetailsIfcsView(generics.RetrieveAPIView):
 class ListBankDetailsNameCityView(generics.ListAPIView):
     """
     Bank details, for given name and city
-    GET bank/<name>/<city>
+    GET search/<name>-<city>/
     """
     serializer_class = BankBranchSerializer
     permission_classes = (permissions.IsAuthenticated,)

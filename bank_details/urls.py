@@ -4,5 +4,5 @@ from .views import ListBankDetailsView, ListBankDetailsNameCityView, BankDetails
 urlpatterns = [
     path('bank/', ListBankDetailsView.as_view(), name="banks-all"),
     path('bank/<str:pk>/', BankDetailsIfcsView.as_view(), name="bank-details"),
-    path('bank/<str:name>/<str:city>/', ListBankDetailsNameCityView.as_view(), name="banks-detail-name-city")
+    path('search/<str:name>-<str:city>/', ListBankDetailsNameCityView.as_view(), name="banks-detail-name-city")
 ]
