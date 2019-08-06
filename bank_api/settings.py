@@ -26,7 +26,7 @@ SECRET_KEY = '7r=3+jp4!t=@*&xe@924m3t$w-9-h$ba7jq5kd!bt@$34#man*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sidd-bank-api.herokuapp.com']
+ALLOWED_HOSTS = ['sidd-bank-api.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
