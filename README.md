@@ -14,3 +14,9 @@ JWT key is valid only for 5 days
 <br>
 # Test APIs
 $ ./curl-example.sh
+<br>
+<br>
+output:
+<br>
+<br>
+![screenshot](https://github.com/siddharth1297/bank_api/blob/master/screenshots/curl-example.png)
