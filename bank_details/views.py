@@ -8,12 +8,19 @@ class ListBankDetailsView(generics.ListAPIView):
     """
     All the bank name, ifsc, address, city, district, state
     GET bank/
+    GET bank/?name=<name>&city=<city>/
     """
     serializer_class = BankBranchSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
     def get_queryset(self):
-        return BankBranch.objects.all()
+        name = self.request.GET.get('name')
+        city = self.request.GET.get('city')
+        qs = BankBranch.objects.all()
+        if name != None and city != None:
+            qs = qs.filter(bank_name=name).filter(city=city)
+
+        return qs
 
 
 class BankDetailsIfcsView(generics.RetrieveAPIView):
@@ -26,17 +33,3 @@ class BankDetailsIfcsView(generics.RetrieveAPIView):
 
     def get_queryset(self):
         return BankBranch.objects.filter(ifsc=self.kwargs.get('pk'))
-
-
-class ListBankDetailsNameCityView(generics.ListAPIView):
-    """
-    Bank details, for given name and city
-    GET search/<name>-<city>/
-    """
-    serializer_class = BankBranchSerializer
-    permission_classes = (permissions.IsAuthenticated,)
-
-    def get_queryset(self):
-        name = self.kwargs.get('name')
-        city = self.kwargs.get('city')
-        return BankBranch.objects.all().filter(bank_name=name).filter(city=city)
