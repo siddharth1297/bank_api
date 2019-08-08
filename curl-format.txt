@@ -70,7 +70,7 @@ Response:
 Request:
 
 curl -X GET \
-  'https://sidd-bank-api.herokuapp.com/api/search/<bankName>-<city>/?limit=<limit>&offset=<offset>' \
+  'https://sidd-bank-api.herokuapp.com/api/bank/?name=<bankName>&city=<city>&limit=<limit>&offset=<offset>' \
   -H 'Authorization: Bearer <token>' \
 
 Response: Similar to Get all bank details (2)
