@@ -30,7 +30,7 @@ echo "------ All the banks details for name='HDFC BNAK' and city='MUMBAI' with l
 echo
 
 curl -X GET \
-  'https://sidd-bank-api.herokuapp.com/api/search/HDFC%20BANK-MUMBAI/?limit=5&offset=2' \
+  'https://sidd-bank-api.herokuapp.com/api/bank/?name=HDFC%20BANK&city=MUMBAI&limit=5&offset=2' \
   -H "Authorization: Bearer $jwt" \
   
 echo
